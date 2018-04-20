@@ -13,7 +13,7 @@ class MonsterTest < MiniTest::Test
       {
         "name" => "goblin",
         "species" => "goblinoid",
-        "type" => "monstrous creature"
+        "type" => "monstrous humanoid"
       }
     )
     @monster2 = Monster.new(
@@ -36,5 +36,8 @@ class MonsterTest < MiniTest::Test
     assert_equal("red dragon", @monster3.name)
   end
 
+  def test_monster_type
+    assert_equal("monstrous humanoid", @monster1.type)
+  end
   
 end # of Class

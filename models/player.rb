@@ -1,6 +1,6 @@
 require_relative('../db/sql_runner')
 
-class Player_Char
+class Player
   attr_reader( :name, :class, :inventory, :id)
 
   def initialize( options )
@@ -10,5 +10,7 @@ class Player_Char
     @inventory = options['inventory']
   end
 
+
+  
 
 end
