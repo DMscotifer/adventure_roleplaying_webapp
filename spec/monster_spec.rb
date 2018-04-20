@@ -39,5 +39,6 @@ class MonsterTest < MiniTest::Test
   def test_monster_type
     assert_equal("monstrous humanoid", @monster1.type)
   end
+
   
 end # of Class
