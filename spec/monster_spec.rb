@@ -30,6 +30,13 @@ class MonsterTest < MiniTest::Test
         "type" => "dragon"
       }
     )
+    @monster4 = Monster.new(
+      {
+        "name" => "allip",
+        "species" => "incorporeal undead",
+        "type" => "undead"
+      }
+    )
   end
 
   def test_monster_name
@@ -40,7 +47,9 @@ class MonsterTest < MiniTest::Test
     assert_equal("monstrous humanoid", @monster1.type)
   end
 
+  # def test_sort_by_name()    
+  #   assert_equal("allip", test.name)
+  # end
 
-  binding.pry
   
 end # of Class

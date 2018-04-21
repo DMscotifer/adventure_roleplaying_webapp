@@ -57,5 +57,10 @@ class Monster
     return results.map{|result| Monster.new(result)}
   end
 
+  def self.sort_by_name()
+    sql = "SELECT * FROM monsters ORDER by name;"
+    results = SqlRunner.run(sql)
+    return results.map{ |result| Monster.new(result) }
+  end
   
 end
