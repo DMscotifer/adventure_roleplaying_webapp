@@ -66,11 +66,10 @@ class MonsterTest < MiniTest::Test
   def test_monster_type
     assert_equal("ooze", @monster1.type)
   end
-
-
   
   def test_find_by_id()
     test = Monster.find_by_id(2)
     assert_equal("dark naga", test.name)
   end
+  
 end # of Class
