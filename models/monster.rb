@@ -48,7 +48,7 @@ class Monster
     sql = "SELECT * FROM monsters WHERE id = $1;"
     values = [id]
     result = SqlRunner.run(sql, values)[0]
-    return Student.new(result)
+    return Monster.new(result)
   end
 
   def self.show_all()
@@ -62,5 +62,5 @@ class Monster
     results = SqlRunner.run(sql)
     return results.map{ |result| Monster.new(result) }
   end
-  
+
 end

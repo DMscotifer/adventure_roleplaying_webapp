@@ -9,47 +9,68 @@ require_relative("../models/monster.rb")
 class MonsterTest < MiniTest::Test
 
   def setup()
-    @monster1 = Monster.new(
-      {
-        "name" => "goblin",
-        "species" => "goblinoid",
-        "type" => "monstrous humanoid"
-      }
-    )
-    @monster2 = Monster.new(
-      {
-        "name" => "naga",
-        "species" => "naga",
-        "type" => "aberation"
-      }
-    )
-    @monster3 = Monster.new(
-      {
-        "name" => "red dragon",
-        "species" => "red dragon",
-        "type" => "dragon"
-      }
-    )
-    @monster4 = Monster.new(
-      {
-        "name" => "allip",
-        "species" => "incorporeal undead",
-        "type" => "undead"
-      }
-    )
+@monster1 = Monster.new(
+  {
+    "name" => "black pudding",
+    "species" => "ooze",
+    "type" => "ooze"
+  }
+)
+
+@monster2 = Monster.new(
+  {
+    "name" => "dark naga",
+    "species" => "naga",
+    "type" => "aberration"
+  }
+)
+
+@monster3 = Monster.new(
+  {
+    "name" => "mohrg",
+    "species" => "undead",
+    "type" => "undead"
+  }
+)
+
+@monster4 = Monster.new(
+  {
+    "name" => "nabasu",
+    "species" => "demon",
+    "type" => "outsider"
+  }
+)
+
+@monster5 = Monster.new(
+  {
+    "name" => "cloakers",
+    "species" => "aberration",
+    "type" => "aberration"
+  }
+)
+
+@onster6 = Monster.new(
+  {
+    "name" => "wraiths",
+    "species" => "incorporeal undead",
+    "type" => "undead"
+  }
+)
+
   end
 
   def test_monster_name
-    assert_equal("red dragon", @monster3.name)
+    assert_equal("mohrg", @monster3.name)
   end
 
   def test_monster_type
-    assert_equal("monstrous humanoid", @monster1.type)
+    assert_equal("ooze", @monster1.type)
   end
 
-  # def test_sort_by_name()    
-  #   assert_equal("allip", test.name)
-  # end
 
   
+  def test_find_by_id()
+    test = Monster.find_by_id(2)
+    assert_equal("dark naga", test.name)
+  end
 end # of Class
