@@ -54,9 +54,8 @@ class Monster
   def self.show_all()
     sql = "SELECT * FROM monsters;"
     results = SqlRunner.run(sql)
-    return results.map{|result| Student.new(result)}
+    return results.map{|result| Monster.new(result)}
   end
-
 
   
 end

@@ -40,5 +40,7 @@ class MonsterTest < MiniTest::Test
     assert_equal("monstrous humanoid", @monster1.type)
   end
 
+
+  binding.pry
   
 end # of Class
