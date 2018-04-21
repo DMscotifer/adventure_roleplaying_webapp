@@ -218,3 +218,49 @@ monster24 = Monster.new(
   }
 )
 monster24.save()
+
+player1 = Player.new(
+  {
+    "name" => "Acalia",
+    "class" => "wizard",
+    "inventory" => "test"
+  }
+)
+player1.save()
+
+player2 = Player.new(
+  {
+    "name" => "Dungan",
+    "class" => "monk",
+    "inventory" => "test"
+  }
+)
+player2.save()
+
+player3 = Player.new(
+  {
+    "name" => "Arthur",
+    "class" => "fighter/mage",
+    "inventory" => "test"
+  }
+)
+player3.save()
+
+player4 = Player.new(
+  {
+    "name" => "Zed",
+    "class" => "assassin",
+    "inventory" => "test"
+  }
+)
+player4.save()
+
+player5 = Player.new(
+  {
+    "name" => "Drizzt",
+    "class" => "ranger",
+    "inventory" => "test"
+  }
+)
+player5.save()
+
