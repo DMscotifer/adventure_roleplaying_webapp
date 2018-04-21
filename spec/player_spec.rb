@@ -26,13 +26,5 @@ class PlayerTest < MiniTest::Test
     assert_equal("necromancer", @player1.class)
   end
 
-  def save()
-    sql =  "INSERT INTO players (name, class, inventory) VALUES ($1, $2, $3) RETURNING id;"
-    values = [@name, @class, @inventory]
-    result = SqlRunner.run(sql, values)
-    @id = result[0]['id'].to_i
-  end
 
-
-  
 end # of Class

@@ -63,12 +63,11 @@ class Monster
     return results.map{ |result| Monster.new(result) }
   end
 
-    def update()
+  def update()
     sql = "UPDATE monsters SET (name, species, type) = ($1, $2, $3) WHERE id = $4;"
-    values = [@name, @species, @id]
+    values = [@name, @species, @type, @id]
     SqlRunner.run(sql, values)
   end
-
-  
+     
   
 end
