@@ -71,5 +71,8 @@ class MonsterTest < MiniTest::Test
     test = Monster.find_by_id(2)
     assert_equal("dark naga", test.name)
   end
-  
+
+  def test_update()
+    test = Monster.find_by_id()
+  end
 end # of Class
