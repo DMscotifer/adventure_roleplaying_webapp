@@ -26,5 +26,8 @@ class PlayerTest < MiniTest::Test
     assert_equal("necromancer", @player1.class)
   end
 
+  def test_update()
+    
+  end
 
 end # of Class
