@@ -2,6 +2,7 @@ require_relative("../models/monster.rb")
 require_relative("../models/player.rb")
 
 Monster.delete_all()
+Player.delete_all()
 
 monster1 = Monster.new(
   {
