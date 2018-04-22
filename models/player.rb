@@ -29,6 +29,28 @@ class Player
     return results.map{|result| Player.new(result)}
   end
 
+  def update()
+    sql = "UPDATE players
+    SET
+    (
+      name,
+      class,
+      inventory
+    ) =
+    (
+      $1, $2, $3
+    )
+    WHERE id = $4"
+    values = [@name, @class, @inventory, @id]
+    SqlRunner.run( sql, values )
+  end
+
+  def self.find_by_id(id)
+    sql = "SELECT * FROM players WHERE id = $1;"
+    values = [id]
+    result = SqlRunner.run(sql, values)[0]
+    return Player.new(result)
+  end
   
 
 end

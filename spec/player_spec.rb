@@ -26,8 +26,9 @@ class PlayerTest < MiniTest::Test
     assert_equal("necromancer", @player1.class)
   end
 
-  def test_update()
-    
+  def test_find_by_id()
+    assert_equal("Acalia", Player.find_by_id(21).name)
   end
-
+  
+binding.pry
 end # of Class
