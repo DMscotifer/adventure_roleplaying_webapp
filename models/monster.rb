@@ -56,7 +56,7 @@ class Monster
     results = SqlRunner.run(sql)
     return results.map{|result| Monster.new(result)}
   end
-
+  
   def self.sort_by_name()
     sql = "SELECT * FROM monsters ORDER by name;"
     results = SqlRunner.run(sql)
@@ -68,6 +68,6 @@ class Monster
     values = [@name, @species, @type, @id]
     SqlRunner.run(sql, values)
   end
-     
-  
+
+
 end

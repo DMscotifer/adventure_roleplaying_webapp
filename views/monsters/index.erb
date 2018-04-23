@@ -10,11 +10,11 @@
     <th></th>
     <th>Type</th>
   </tr>
-  <% for monster in @monsters %>
+  <% for monster in @monster %>
   <tr>
     <td><a href="/monsters/<%= monster.id %>"><%= monster.name %></a></td>
     <td>|</td>
-    <td><%= ,monster.type %></td>
+    <td><%= monster.type %></td>
   </tr>
   <% end %>
 </table>

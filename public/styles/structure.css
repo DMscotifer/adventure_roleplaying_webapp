@@ -1,12 +1,13 @@
 body {
   margin-left: 200px;
-  background: black url('/images/dragon.jpg');
+  background: black;
   background-size: 100%;
   background-repeat: no-repeat;
   color: black;
   font-family: 'MedievalSharp', cursive;
   padding: 0px;
   margin: 0px;
+  font-size: 2em;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -25,22 +26,87 @@ a:hover, a:active, a:focus {
   color: blue;
 }
 
+.page-header {
+    color: rgb(255, 255, 255);
+    background-size: 100% no-repeat center;
+    background-color: rgba(0, 0, 0, 0);
+    background-position: 50% 0px;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-image: none;
+    background-origin: padding-box;
+    background-clip: border-box;
+    background-size: cover;
+    position: relative;
+    max-height: 600px;
+    overflow: hidden;
+    margin-bottom: 35px;
+}
 
 .title_div {
+    color: gold;
     font-size: 3em;
     text-align: center;
     position: relative;
     min-height: 100%;
     top: 0px;
     margin: 0px;
+    text-shadow: 3px 2px red;
 }
 
 .center_div {
-    border: 2px solid gray;
+    border: 2px solid #993333;
     margin-left: auto;
     margin-right: auto;
     width: 90%;
-    background: white;
+    background: #f1e9d2;
     text-align: left;
     padding: 8px;
+    padding-bottom: 10em;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #993333;
+}
+
+.nav {
+  z-index: auto;
+  position: fixed;
+  border: 2px solid #993333;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+  background: #f1e9d2;
+  text-align: left;
+}
+
+.search {
+  color: white;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
 }
