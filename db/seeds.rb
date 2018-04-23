@@ -272,7 +272,8 @@ item1 = Item.new(
   {
     "name" => "Blade of Binding",
     "player_id" => player1.id,
-    "monster_id" => monster1.id
+    "monster_id" => monster1.id,
+    "pc_owned" => false
   }
 )
 item1.save()
@@ -281,7 +282,8 @@ item2 = Item.new(
   {
     "name" => "Forsaken Banded Mail",
     "player_id" => player1.id,
-    "monster_id" => monster1.id
+    "monster_id" => monster1.id,
+    "pc_owned" => false
   }
 )
 item2.save()
@@ -290,7 +292,8 @@ item3 = Item.new(
   {
     "name" => "Ring of Retribution",
     "player_id" => player1.id,
-    "monster_id" => monster1.id
+    "monster_id" => monster1.id,
+    "pc_owned" => false
   }
 )
 item3.save()
@@ -299,7 +302,8 @@ item4 = Item.new(
   {
     "name" => "Staff of Souls",
     "player_id" => player1.id,
-    "monster_id" => monster1.id
+    "monster_id" => monster1.id,
+    "pc_owned" => false
   }
 )
 item4.save()
@@ -308,7 +312,8 @@ item5 = Item.new(
   {
     "name" => "Sphere of Annihilation",
     "player_id" => player1.id,
-    "monster_id" => monster1.id
+    "monster_id" => monster1.id,
+    "pc_owned" => false
   }
 )
 item5.save()
@@ -317,7 +322,28 @@ item6 = Item.new(
   {
     "name" => "Book of Lorgar",
     "player_id" => player1.id,
-    "monster_id" => monster1.id
+    "monster_id" => monster1.id,
+    "pc_owned" => false
   }
 )
 item6.save()
+
+item7 = Item.new(
+  {
+    "name" => "Twinkle",
+    "player_id" => player5.id,
+    "monster_id" => monster1.id,
+    "pc_owned" => true
+  }
+)
+item7.save()
+
+item7 = Item.new(
+  {
+    "name" => "Icingdeath",
+    "player_id" => player5.id,
+    "monster_id" => monster1.id,
+    "pc_owned" => true
+  }
+)
+item7.save()

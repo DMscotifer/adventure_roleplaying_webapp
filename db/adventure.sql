@@ -15,8 +15,7 @@ CREATE TABLE players
 (
   id SERIAL8 PRIMARY KEY,
   name VARCHAR(255) not null,
-  class VARCHAR(255) not null,
-  inventory VARCHAR(255) not null
+  class VARCHAR(255) not null
 );
 
 CREATE TABLE items
@@ -24,5 +23,6 @@ CREATE TABLE items
   id SERIAL PRIMARY KEY,
   name VARCHAR(255) not null,
   player_id INT REFERENCES players(id) ON DELETE CASCADE,
-  monster_id INT REFERENCES monsters(id) ON DELETE CASCADE
+  monster_id INT REFERENCES monsters(id) ON DELETE CASCADE,
+  pc_owned BOOLEAN
 );

@@ -2,19 +2,18 @@ require_relative('../db/sql_runner')
 
 class Player
   attr_reader(:id)
-  attr_accessor(:name, :class, :inventory, )
+  attr_accessor(:name, :class )
 
   def initialize( options )
     @id = options['id'].to_i if options["id"]
     @name = options['name']
     @class = options['class']
-    @inventory = options['inventory']
   end
 
 
   def save()
-    sql =  "INSERT INTO players (name, class, inventory) VALUES ($1, $2, $3) RETURNING id;"
-    values = [@name, @class, @inventory]
+    sql =  "INSERT INTO players (name, class) VALUES ($1, $2) RETURNING id;"
+    values = [@name, @class]
     result = SqlRunner.run(sql, values)
     @id = result[0]['id'].to_i
   end
@@ -35,14 +34,13 @@ class Player
     SET
     (
       name,
-      class,
-      inventory
+      class
     ) =
     (
-      $1, $2, $3
+      $1, $2
     )
-    WHERE id = $4"
-    values = [@name, @class, @inventory, @id]
+    WHERE id = $3"
+    values = [@name, @class, @id]
     SqlRunner.run( sql, values )
   end
 

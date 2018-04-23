@@ -3,7 +3,7 @@ require_relative("../db/sql_runner")
 class Item
 
   attr_reader :id
-  attr_accessor :name, :player_id, :monster_id
+  attr_accessor :name, :player_id, :monster_id, :pc_owned
 
 
   def initialize(options)
@@ -11,6 +11,7 @@ class Item
     @name = options['name']
     @player_id = options['player_id'].to_i
     @monster_id = options['monster_id'].to_i
+    @pc_owned = options['pc_owned']
   end
 
   def save()
@@ -18,14 +19,15 @@ class Item
     (
       name,
       player_id,
-      monster_id
+      monster_id,
+      pc_owned
     )
     VALUES
     (
-      $1, $2, $3
+      $1, $2, $3, $4
     )
     RETURNING id"
-    values = [@name, @player_id, @monster_id]
+    values = [@name, @player_id, @monster_id, @pc_owned]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
@@ -35,5 +37,10 @@ class Item
     SqlRunner.run(sql)
   end
 
+  def self.party_inventory()
+    sql = "SELECT players.*, items.name FROM players INNER JOIN items ON players.id = items.player_id AND items.pc_owned = true ;"
+    results = SqlRunner.run(sql)
+    return results.map{|result| Item.new(result)}
+  end
 
 end
