@@ -1,0 +1,46 @@
+body {
+  margin-left: 200px;
+  background: black url('/images/dragon.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  color: black;
+  font-family: 'MedievalSharp', cursive;
+  padding: 0px;
+  margin: 0px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'MedievalSharp', cursive;
+  margin: 0px;
+  padding: 0px;
+  flex
+}
+
+a, a:link, a:visited {
+  color: blue;
+  text-decoration: none;
+}
+
+a:hover, a:active, a:focus {
+  color: blue;
+}
+
+
+.title_div {
+    font-size: 3em;
+    text-align: center;
+    position: relative;
+    min-height: 100%;
+    top: 0px;
+    margin: 0px;
+}
+
+.center_div {
+    border: 2px solid gray;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    background: white;
+    text-align: left;
+    padding: 8px;
+}

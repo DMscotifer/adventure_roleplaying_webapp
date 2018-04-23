@@ -1,14 +1,16 @@
 require_relative("../models/monster.rb")
 require_relative("../models/player.rb")
+require_relative("../models/item.rb")
 
 Monster.delete_all()
 Player.delete_all()
+Item.delete_all()
 
 monster1 = Monster.new(
   {
-    "name" => "black pudding",
-    "species" => "ooze",
-    "type" => "ooze"
+    "name" => "placeholder",
+    "species" => "placeholder",
+    "type" => "placeholder"
   }
 )
 monster1.save()
@@ -222,9 +224,9 @@ monster24.save()
 
 player1 = Player.new(
   {
-    "name" => "Acalia",
-    "class" => "wizard",
-    "inventory" => "test"
+    "name" => "placeholder",
+    "class" => "placeholder",
+    "inventory" => "placeholder"
   }
 )
 player1.save()
@@ -264,4 +266,58 @@ player5 = Player.new(
   }
 )
 player5.save()
+
+item1 = Item.new(
+  {
+    "name" => "Blade of Binding",
+    "monster_id" => monster1.id,
+    "player_id" => 1
+  }
+)
+item1.save()
+
+item2 = Item.new(
+  {
+    "name" => "Forsaken Banded Mail",
+    "monster_id" => monster4.id,
+    "player_id" => 1
+  }
+)
+item2.save()
+
+item3 = Item.new(
+  {
+    "name" => "Ring of Retribution",
+    "monster_id" => monster23.id,
+    "player_id" => 1
+  }
+)
+item3.save()
+
+item4 = Item.new(
+  {
+    "name" => "Staff of Souls",
+    "monster_id" => monster21.id,
+    "player_id" => 1
+  }
+)
+item4.save()
+
+item5 = Item.new(
+  {
+    "name" => "Sphere of Annihilation",
+    "monster_id" => monster4.id,
+    "player_id" => 1
+  }
+)
+item5.save()
+
+item6 = Item.new(
+  {
+    "name" => "Book of Lorgar",
+    "monster_id" => monster15.id,
+    "player_id" => 1
+  }
+)
+item6.save()
 

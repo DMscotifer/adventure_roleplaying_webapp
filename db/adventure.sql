@@ -1,6 +1,6 @@
-DROP TABLE items;
-DROP TABLE players;
-DROP TABLE monsters;
+DROP TABLE IF EXISTS items;
+DROP TABLE IF EXISTS players;
+DROP TABLE IF EXISTS monsters;
 
 
 CREATE TABLE monsters
@@ -21,7 +21,8 @@ CREATE TABLE players
 
 CREATE TABLE items
 (
-  id SERIAL8 PRIMARY KEY,
-  item_id INT,
-  owner_id INT REFERENCES players(id) ON DELETE CASCADE
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(255) not null,
+  monster_id INT REFERENCES monsters(id) ON DELETE CASCADE,
+  player_id INT REFERENCES players(id) ON DELETE CASCADE
 );
