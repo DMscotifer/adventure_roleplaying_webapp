@@ -1,7 +1,8 @@
 require_relative('../db/sql_runner')
 
 class Player
-  attr_reader( :name, :class, :inventory, :id)
+  attr_reader(:id)
+  attr_accessor(:name, :class, :inventory, )
 
   def initialize( options )
     @id = options['id'].to_i if options["id"]
@@ -51,6 +52,6 @@ class Player
     result = SqlRunner.run(sql, values)[0]
     return Player.new(result)
   end
-  
+
 
 end

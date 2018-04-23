@@ -1,11 +1,12 @@
 require_relative("../models/monster.rb")
 require_relative("../models/player.rb")
 require_relative("../models/item.rb")
+require("pry-byebug")
 
 Monster.delete_all()
 Player.delete_all()
 Item.delete_all()
-
+#
 monster1 = Monster.new(
   {
     "name" => "placeholder",
@@ -14,7 +15,7 @@ monster1 = Monster.new(
   }
 )
 monster1.save()
-
+#
 monster2 = Monster.new(
   {
     "name" => "dark naga",
@@ -23,7 +24,7 @@ monster2 = Monster.new(
   }
 )
 monster2.save()
-
+#
 monster3 = Monster.new(
   {
     "name" => "mohrg",
@@ -32,7 +33,7 @@ monster3 = Monster.new(
   }
 )
 monster3.save()
-
+#
 monster4 = Monster.new(
   {
     "name" => "nabasu",
@@ -41,7 +42,7 @@ monster4 = Monster.new(
   }
 )
 monster4.save()
-
+#
 monster5 = Monster.new(
   {
     "name" => "cloakers",
@@ -50,7 +51,7 @@ monster5 = Monster.new(
   }
 )
 monster5.save()
-
+#
 monster6 = Monster.new(
   {
     "name" => "wraiths",
@@ -59,7 +60,7 @@ monster6 = Monster.new(
   }
 )
 monster6.save()
-
+#
 monster7 = Monster.new(
   {
     "name" => "ettins",
@@ -68,7 +69,7 @@ monster7 = Monster.new(
   }
 )
 monster7.save()
-
+#
 monster8 = Monster.new(
   {
     "name" => "bone devil",
@@ -77,7 +78,7 @@ monster8 = Monster.new(
   }
 )
 monster8.save()
-
+#
 monster9 = Monster.new(
   {
     "name" => "night hag",
@@ -86,7 +87,7 @@ monster9 = Monster.new(
   }
 )
 monster9.save()
-
+#
 monster10 = Monster.new(
   {
     "name" => "spirit naga",
@@ -95,7 +96,7 @@ monster10 = Monster.new(
   }
 )
 monster10.save()
-
+#
 monster11 = Monster.new(
   {
     "name" => "vampire",
@@ -104,7 +105,7 @@ monster11 = Monster.new(
   }
 )
 monster11.save()
-
+#
 monster12 = Monster.new(
   {
     "name" => "vrock",
@@ -113,7 +114,7 @@ monster12 = Monster.new(
   }
 )
 monster12.save()
-
+#
 monster13 = Monster.new(
   {
     "name" => "minotaur",
@@ -122,7 +123,7 @@ monster13 = Monster.new(
   }
 )
 monster13.save()
-
+#
 monster14 = Monster.new(
   {
     "name" => "troll",
@@ -131,7 +132,7 @@ monster14 = Monster.new(
   }
 )
 monster14.save()
-
+#
 monster15 = Monster.new(
   {
     "name" => "greater shadows",
@@ -140,7 +141,7 @@ monster15 = Monster.new(
    }
 )
 monster15.save()
-
+#
 monster16 = Monster.new(
   {
     "name" => "bebilith",
@@ -149,7 +150,7 @@ monster16 = Monster.new(
   }
 )
 monster16.save()
-
+#
 monster17 = Monster.new(
   {
     "name" => "barbed devil",
@@ -158,7 +159,7 @@ monster17 = Monster.new(
   }
 )
 monster17.save()
-
+#
 monster18 = Monster.new(
   {
     "name" => "devourer",
@@ -167,7 +168,7 @@ monster18 = Monster.new(
   }
 )
 monster18.save()
-
+#
 monster19 = Monster.new(
   {
     "name" => "hezrou",
@@ -176,7 +177,7 @@ monster19 = Monster.new(
   }
 )
 monster19.save()
-
+#
 monster20 = Monster.new(
   {
     "name" => "rakshasas",
@@ -185,7 +186,7 @@ monster20 = Monster.new(
   }
 )
 monster20.save()
-
+#
 monster21 = Monster.new(
   {
     "name" => "lich",
@@ -194,7 +195,7 @@ monster21 = Monster.new(
   }
 )
 monster21.save()
-
+#
 monster22 = Monster.new(
   {
     "name" => "glabrezu	",
@@ -203,7 +204,7 @@ monster22 = Monster.new(
   }
 )
 monster22.save()
-
+#
 monster23 = Monster.new(
   {
     "name" => "ice devil",
@@ -212,7 +213,7 @@ monster23 = Monster.new(
   }
 )
 monster23.save()
-
+#
 monster24 = Monster.new(
   {
     "name" => "nalfeshnee",
@@ -221,7 +222,7 @@ monster24 = Monster.new(
   }
 )
 monster24.save()
-
+#
 player1 = Player.new(
   {
     "name" => "placeholder",
@@ -230,7 +231,7 @@ player1 = Player.new(
   }
 )
 player1.save()
-
+#
 player2 = Player.new(
   {
     "name" => "Dungan",
@@ -239,7 +240,7 @@ player2 = Player.new(
   }
 )
 player2.save()
-
+#
 player3 = Player.new(
   {
     "name" => "Arthur",
@@ -248,7 +249,7 @@ player3 = Player.new(
   }
 )
 player3.save()
-
+#
 player4 = Player.new(
   {
     "name" => "Zed",
@@ -257,7 +258,7 @@ player4 = Player.new(
   }
 )
 player4.save()
-
+#
 player5 = Player.new(
   {
     "name" => "Drizzt",
@@ -270,8 +271,8 @@ player5.save()
 item1 = Item.new(
   {
     "name" => "Blade of Binding",
-    "monster_id" => monster1.id,
-    "player_id" => 1
+    "player_id" => player1.id,
+    "monster_id" => monster1.id
   }
 )
 item1.save()
@@ -279,8 +280,8 @@ item1.save()
 item2 = Item.new(
   {
     "name" => "Forsaken Banded Mail",
-    "monster_id" => monster4.id,
-    "player_id" => 1
+    "player_id" => player1.id,
+    "monster_id" => monster1.id
   }
 )
 item2.save()
@@ -288,8 +289,8 @@ item2.save()
 item3 = Item.new(
   {
     "name" => "Ring of Retribution",
-    "monster_id" => monster23.id,
-    "player_id" => 1
+    "player_id" => player1.id,
+    "monster_id" => monster1.id
   }
 )
 item3.save()
@@ -297,8 +298,8 @@ item3.save()
 item4 = Item.new(
   {
     "name" => "Staff of Souls",
-    "monster_id" => monster21.id,
-    "player_id" => 1
+    "player_id" => player1.id,
+    "monster_id" => monster1.id
   }
 )
 item4.save()
@@ -306,8 +307,8 @@ item4.save()
 item5 = Item.new(
   {
     "name" => "Sphere of Annihilation",
-    "monster_id" => monster4.id,
-    "player_id" => 1
+    "player_id" => player1.id,
+    "monster_id" => monster1.id
   }
 )
 item5.save()
@@ -315,9 +316,8 @@ item5.save()
 item6 = Item.new(
   {
     "name" => "Book of Lorgar",
-    "monster_id" => monster15.id,
-    "player_id" => 1
+    "player_id" => player1.id,
+    "monster_id" => monster1.id
   }
 )
 item6.save()
-

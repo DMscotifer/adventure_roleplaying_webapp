@@ -23,6 +23,6 @@ CREATE TABLE items
 (
   id SERIAL PRIMARY KEY,
   name VARCHAR(255) not null,
-  monster_id INT REFERENCES monsters(id) ON DELETE CASCADE,
-  player_id INT REFERENCES players(id) ON DELETE CASCADE
+  player_id INT REFERENCES players(id) ON DELETE CASCADE,
+  monster_id INT REFERENCES monsters(id) ON DELETE CASCADE
 );

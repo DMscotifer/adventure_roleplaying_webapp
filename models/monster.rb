@@ -1,7 +1,8 @@
 require_relative('../db/sql_runner')
 
 class Monster
-  attr_reader( :name, :species, :type, :id)
+  attr_reader(:id)
+  attr_accessor(:name, :species, :type) 
 
   def initialize( options )
     @id = options['id'].to_i if options["id"]
@@ -56,7 +57,7 @@ class Monster
     results = SqlRunner.run(sql)
     return results.map{|result| Monster.new(result)}
   end
-  
+
   def self.sort_by_name()
     sql = "SELECT * FROM monsters ORDER by name;"
     results = SqlRunner.run(sql)
