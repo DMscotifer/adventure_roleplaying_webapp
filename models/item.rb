@@ -17,7 +17,7 @@ class Item
     sql = "INSERT INTO items
     (
       name,
-      player_id
+      player_id,
       monster_id
     )
     VALUES
