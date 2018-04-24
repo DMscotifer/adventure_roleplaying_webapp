@@ -2,11 +2,18 @@
 <h1><%= @monster.name.split.map(&:capitalize).join(' ') %></h1>
 </div>
 
-<div class="center_div"
+<div class="center_div">
+
+  <div class="subject-image">
+    <img src=<%= @monster.image %> alt="">
+  </div>
 
 <p>Species: <%= @monster.species.split.map(&:capitalize).join(' ')%></p>
 
 <p>Type: <%= @monster.type.split.map(&:capitalize).join(' ') %></p>
-</div>
 
-<img src=<%= @monster.image %> alt="">
+<p> <%= @monster.description %></p>
+
+
+
+</div>

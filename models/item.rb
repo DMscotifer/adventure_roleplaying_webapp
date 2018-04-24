@@ -6,7 +6,7 @@ require_relative("player.rb")
 class Item
 
   attr_reader :id
-  attr_accessor :name, :player_id, :monster_id, :pc_owned
+  attr_accessor :name, :player_id, :monster_id, :pc_owned, :image, :description
 
 
   def initialize(options)
@@ -15,6 +15,8 @@ class Item
     @player_id = options['player_id'].to_i
     @monster_id = options['monster_id'].to_i
     @pc_owned = options['pc_owned']
+    @image = options['image']
+    @description = options['description']
   end
 
   def save()
@@ -23,14 +25,16 @@ class Item
       name,
       player_id,
       monster_id,
-      pc_owned
+      pc_owned,
+      image,
+      description
     )
     VALUES
     (
-      $1, $2, $3, $4
+      $1, $2, $3, $4, $5, $6
     )
     RETURNING id"
-    values = [@name, @player_id, @monster_id, @pc_owned]
+    values = [@name, @player_id, @monster_id, @pc_owned, @image, @description]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end

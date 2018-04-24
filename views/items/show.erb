@@ -2,8 +2,14 @@
 <h1><%= @item.name.split.map(&:capitalize).join(' ') %></h1>
 </div>
 
-<div class="center_div"
+<div class="center_div">
 
-<p>Owner: <%= Player.find(@item.player_id).name %></p>
+    <div class="subject-image">
+        <img src=<%= @item.image %> alt="">
+    </div>
+
+    <p>Owner: <%= Player.find(@item.player_id).name %></p>
+
+    <p> <%= @item.description %></p>
 
 </div>

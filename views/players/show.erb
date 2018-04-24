@@ -2,8 +2,10 @@
 <h1><%= @player.name.split.map(&:capitalize).join(' ') %></h1>
 </div>
 
-<div class="center_div"
+<div class="center_div">
+  <div class="subject-image">
+  <img src=<%= @player.image %> alt="">
+  </div>
 <p>Class: <%= @player.class.split.map(&:capitalize).join(' ')%></p>
+<p> <%= @player.description %></p>
 </div>
-
-<img src=<%= @player.image %> alt="">
