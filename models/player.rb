@@ -44,11 +44,12 @@ class Player
     SqlRunner.run( sql, values )
   end
 
-  def self.find_by_id(id)
+  def self.find(id)
     sql = "SELECT * FROM players WHERE id = $1;"
     values = [id]
     result = SqlRunner.run(sql, values)[0]
     return Player.new(result)
   end
+
 
 end

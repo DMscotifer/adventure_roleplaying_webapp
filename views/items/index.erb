@@ -1,0 +1,25 @@
+<body>
+
+<h1 class="title_div">Party Inventory</h1>
+<div class="center_div">
+<div class="blurb">
+<p>Paladin: "I survived jumping off the cliff?"</p>
+<p>Game Master: "Yes, but you forgot that you were carrying a substantial quantity of very delicate explosives..."
+<h2>Know what your carrying!</h2>
+</div>
+</br>
+<table class=table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th>Owner</th>
+  </tr>
+  <% for item in @items %>
+  <tr>
+    <td><a href="/items/<%= item.id %>"><%= item.name.capitalize %></a></td>
+    <td>|</td>
+    <td><%= item.player_id %></td>
+  </tr>
+  <% end %>
+</div>
+</body>

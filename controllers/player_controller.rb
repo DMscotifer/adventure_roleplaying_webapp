@@ -13,5 +13,5 @@ end
 
 get '/players/:id' do
   @player = Player.find(params['id'].to_i)
-  erb(:"player/show")
+  erb(:"players/show")
 end

@@ -1,4 +1,5 @@
 body {
+  display: block;
   margin-left: 200px;
   background: black;
   background-size: 100%;
@@ -27,67 +28,67 @@ a:hover, a:active, a:focus {
 }
 
 .page-header {
-    color: rgb(255, 255, 255);
-    background-size: 100% no-repeat center;
-    background-color: rgba(0, 0, 0, 0);
-    background-position: 50% 0px;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    background-image: none;
-    background-origin: padding-box;
-    background-clip: border-box;
-    background-size: cover;
-    position: relative;
-    max-height: 600px;
-    overflow: hidden;
-    margin-bottom: 35px;
+  color: rgb(255, 255, 255);
+  background-size: 100% no-repeat center;
+  background-color: rgba(0, 0, 0, 0);
+  background-position: 50% 0px;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-image: none;
+  background-origin: padding-box;
+  background-clip: border-box;
+  background-size: cover;
+  position: relative;
+  max-height: 600px;
+  overflow: hidden;
+  margin-bottom: 35px;
 }
 
 .title_div {
-    color: gold;
-    font-size: 2em;
-    word-spacing: 0.5em;
-    text-align: center;
-    position: relative;
-    min-height: 100%;
-    top: 0px;
-    margin: 0px;
-    text-shadow: 3px 2px red;
+  color: gold;
+  font-size: 2em;
+  word-spacing: 0.5em;
+  text-align: center;
+  position: relative;
+  min-height: 100%;
+  top: 1em;
+  text-shadow: 3px 2px red;
 }
 
 .center_div {
-    border: 2px solid #993333;
-    margin-left: auto;
-    margin-right: auto;
-    width: 90%;
-    background: #f1e9d2;
-    text-align: left;
-    padding: 8px;
-    padding-bottom: 10em;
+  border: 2px solid #993333;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2em;
+  width: 90%;
+  background: #f1e9d2;
+  text-align: left;
+  padding: 8px;
+  padding-bottom: 5em;
 }
 
 ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #f1e9d2;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #f1e9d2;
 }
 
 li {
-    float: left;
+  float: left;
 }
 
 li a {
-    display: block;
-    color: black;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
 
 li a:hover {
-    background-color: #993333;
+  background-color: #993333;
 }
 
 .nav {
@@ -110,8 +111,14 @@ li a:hover {
 }
 
 .center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 95%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 95%;
+}
+
+.container {
+  position: relative;
+  bottom: 8.5em;
+  text-align: center;
 }

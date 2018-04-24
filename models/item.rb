@@ -41,7 +41,7 @@ class Item
   end
 
   def self.party_inventory()
-    sql = "SELECT players.*, items.name FROM players INNER JOIN items ON players.id = items.player_id AND items.pc_owned = true ;"
+    sql = "SELECT players.*, items.* FROM players INNER JOIN items ON players.id = items.player_id AND items.pc_owned = true ;"
     results = SqlRunner.run(sql)
     return results.map{|result| Item.new(result)}
   end

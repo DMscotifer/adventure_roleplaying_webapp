@@ -3,5 +3,6 @@ require( 'sinatra/contrib/all' )
 require_relative( '../models/item.rb' )
 
 get '/items' do
-  erb ( :"items/show")
+  @items = Item.party_inventory()
+  erb ( :"items/index")
 end
