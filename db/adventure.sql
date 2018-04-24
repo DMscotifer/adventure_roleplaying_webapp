@@ -9,8 +9,8 @@ CREATE TABLE monsters
   name VARCHAR(255) not null,
   species VARCHAR(255) not null,
   type VARCHAR(255) not null,
-  known BOOLEAN not null
-
+  known BOOLEAN not null,
+  image VARCHAR(255)
 );
 
 CREATE TABLE players

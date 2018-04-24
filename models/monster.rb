@@ -2,7 +2,7 @@ require_relative('../db/sql_runner')
 
 class Monster
   attr_reader(:id)
-  attr_accessor(:name, :species, :type, :known)
+  attr_accessor(:name, :species, :type, :known, :image)
 
   def initialize( options )
     @id = options['id'].to_i if options["id"]
@@ -10,11 +10,12 @@ class Monster
     @species = options['species']
     @type = options['type']
     @known = options['known']
+    @image = options['image']
   end
 
   def save()
-    sql =  "INSERT INTO monsters (name, species, type, known) VALUES ($1, $2, $3, $4) RETURNING id;"
-    values = [@name, @species, @type, @known]
+    sql =  "INSERT INTO monsters (name, species, type, known, image) VALUES ($1, $2, $3, $4, $5) RETURNING id;"
+    values = [@name, @species, @type, @known, @image]
     result = SqlRunner.run(sql, values)
     @id = result[0]['id'].to_i
   end
@@ -26,13 +27,14 @@ class Monster
       name,
       species,
       type,
-      known
+      known,
+      image
     ) =
     (
-      $1, $2, $3, $4
+      $1, $2, $3, $4, $5
     )
-    WHERE id = $5"
-    values = [@name, @species, @type, @known]
+    WHERE id = $6"
+    values = [@name, @species, @type, @known, @image]
     SqlRunner.run( sql, values )
   end
 
@@ -68,8 +70,8 @@ class Monster
   end
 
   def update()
-    sql = "UPDATE monsters SET (name, species, type, known) = ($1, $2, $3, $4) WHERE id = $5;"
-    values = [@name, @species, @type, @known, @id]
+    sql = "UPDATE monsters SET (name, species, type, known, image) = ($1, $2, $3, $4, $5) WHERE id = $6;"
+    values = [@name, @species, @type, @known, @image, @id]
     SqlRunner.run(sql, values)
   end
 
