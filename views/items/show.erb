@@ -1,0 +1,9 @@
+<div class="title_div"
+<h1><%= @item.name.split.map(&:capitalize).join(' ') %></h1>
+</div>
+
+<div class="center_div"
+
+<p>Owner: <%= Player.find(@item.player_id).name %></p>
+
+</div>

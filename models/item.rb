@@ -46,4 +46,11 @@ class Item
     return results.map{|result| Item.new(result)}
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM items WHERE id = $1;"
+    values = [id]
+    result = SqlRunner.run(sql, values)[0]
+    return Item.new(result)
+  end
+
 end

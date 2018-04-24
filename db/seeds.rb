@@ -268,7 +268,7 @@ player2.save()
 player3 = Player.new(
   {
     "name" => "Arthur",
-    "class" => "fighter/mage",
+    "class" => "Spellsword",
     "inventory" => "test"
   }
 )

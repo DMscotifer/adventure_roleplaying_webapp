@@ -11,13 +11,11 @@
 <table class=table>
   <tr>
     <th>Name</th>
-    <th></th>
     <th>Class</th>
   </tr>
   <% for player in @players %>
   <tr>
     <td><a href="/players/<%= player.id %>"><%= player.name.capitalize %></a></td>
-    <td>|</td>
     <td><%= player.class.capitalize %></td>
   </tr>
   <% end %>

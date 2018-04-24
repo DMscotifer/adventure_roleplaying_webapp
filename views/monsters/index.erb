@@ -11,17 +11,13 @@
 <table class=table>
   <tr>
     <th>Name</th>
-    <th></th>
     <th>Species</th>
-    <th></th>
     <th>Type</th>
   </tr>
   <% for monster in @monsters %>
   <tr>
     <td><a href="/monsters/<%= monster.id %>"><%= monster.name.split.map(&:capitalize).join(' ')%></a></td>
-    <td>|</td>
     <td><%= monster.species.split.map(&:capitalize).join(' ') %></td>
-    <td>|</td>
     <td><%= monster.type.split.map(&:capitalize).join(' ')%></td>
   </tr>
   <% end %>

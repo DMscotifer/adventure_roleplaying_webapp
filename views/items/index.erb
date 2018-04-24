@@ -11,14 +11,12 @@
 <table class=table>
   <tr>
     <th>Name</th>
-    <th></th>
     <th>Owner</th>
   </tr>
   <% for item in @items %>
   <tr>
     <td><a href="/items/<%= item.id %>"><%= item.name.capitalize %></a></td>
-    <td>|</td>
-    <td><%= item.player_id %></td>
+    <td><%= Player.find(item.player_id).name %></td>
   </tr>
   <% end %>
 </div>
