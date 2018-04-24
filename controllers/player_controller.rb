@@ -7,5 +7,11 @@ get '/' do
 end
 
 get '/players' do
-  erb ( :"players/show")
+  @players = Player.show_all()
+  erb ( :"players/index")
+end
+
+get '/players/:id' do
+  @player = Player.find(params['id'].to_i)
+  erb(:"player/show")
 end

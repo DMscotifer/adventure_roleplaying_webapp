@@ -1,10 +1,12 @@
-<h1>Codex Monstrum</h1>
+<body>
 
+<h1 class="title_div">Codex Monstrum</h1>
+<div class="center_div">
 <p>Fearsome and formidable foes lurk within the hallowed halls where only the brave or stupid dare to tread.</p>
 
 <p>Prepare yourself, for knowledge is power.</p>
 </br>
-<table>
+<table class=table>
   <tr>
     <th>Name</th>
     <th></th>
@@ -14,11 +16,12 @@
   </tr>
   <% for monster in @monsters %>
   <tr>
-    <td><a href="/monsters/<%= monster.id %>"><%= monster.name %></a></td>
+    <td><a href="/monsters/<%= monster.id %>"><%= monster.name.capitalize %></a></td>
     <td>|</td>
-    <td><%= monster.species %></td>
+    <td><%= monster.species.capitalize %></td>
     <td>|</td>
-    <td><%= monster.type %></td>
+    <td><%= monster.type.capitalize %></td>
   </tr>
   <% end %>
-</table>
+</div>
+</body>

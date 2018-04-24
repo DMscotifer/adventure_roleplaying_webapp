@@ -24,7 +24,7 @@ class Player
   end
 
   def self.show_all()
-    sql = "SELECT * FROM players;"
+    sql = "SELECT * FROM players WHERE players.id != 1;"
     results = SqlRunner.run(sql)
     return results.map{|result| Player.new(result)}
   end
