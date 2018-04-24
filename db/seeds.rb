@@ -251,7 +251,8 @@ player1 = Player.new(
   {
     "name" => "placeholder",
     "class" => "placeholder",
-    "inventory" => "placeholder"
+    "inventory" => "placeholder",
+    "image" => "placeholder"
   }
 )
 player1.save()
@@ -260,7 +261,8 @@ player2 = Player.new(
   {
     "name" => "Dungan",
     "class" => "monk",
-    "inventory" => "test"
+    "inventory" => "test",
+    "image" => "/views/images/players/dungan.jpg"
   }
 )
 player2.save()
@@ -269,7 +271,8 @@ player3 = Player.new(
   {
     "name" => "Arthur",
     "class" => "Spellsword",
-    "inventory" => "test"
+    "inventory" => "test",
+    "image" => "/views/images/players/arthur.jpg"
   }
 )
 player3.save()
@@ -278,7 +281,8 @@ player4 = Player.new(
   {
     "name" => "Zed",
     "class" => "assassin",
-    "inventory" => "test"
+    "inventory" => "test",
+    "image" => "/views/images/players/zed.jpg"
   }
 )
 player4.save()
@@ -287,7 +291,8 @@ player5 = Player.new(
   {
     "name" => "Drizzt",
     "class" => "ranger",
-    "inventory" => "test"
+    "inventory" => "test",
+    "image" => "/views/images/players/drizzt.jpeg"
   }
 )
 player5.save()

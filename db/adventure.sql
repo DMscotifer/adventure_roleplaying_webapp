@@ -17,7 +17,9 @@ CREATE TABLE players
 (
   id SERIAL8 PRIMARY KEY,
   name VARCHAR(255) not null,
-  class VARCHAR(255) not null
+  class VARCHAR(255) not null,
+  image VARCHAR(255)
+
 );
 
 CREATE TABLE items
