@@ -8,11 +8,15 @@
   <tr>
     <th>Name</th>
     <th></th>
+    <th>Species</th>
+    <th></th>
     <th>Type</th>
   </tr>
-  <% for monster in @monster %>
+  <% for monster in @monsters %>
   <tr>
     <td><a href="/monsters/<%= monster.id %>"><%= monster.name %></a></td>
+    <td>|</td>
+    <td><%= monster.species %></td>
     <td>|</td>
     <td><%= monster.type %></td>
   </tr>

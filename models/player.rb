@@ -51,5 +51,4 @@ class Player
     return Player.new(result)
   end
 
-
 end

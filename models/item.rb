@@ -1,4 +1,7 @@
 require_relative("../db/sql_runner")
+require_relative("monster.rb")
+require_relative("player.rb")
+
 
 class Item
 

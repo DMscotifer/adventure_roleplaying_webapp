@@ -8,7 +8,9 @@ CREATE TABLE monsters
   id SERIAL8 PRIMARY KEY,
   name VARCHAR(255) not null,
   species VARCHAR(255) not null,
-  type VARCHAR(255) not null
+  type VARCHAR(255) not null,
+  known BOOLEAN not null
+
 );
 
 CREATE TABLE players
