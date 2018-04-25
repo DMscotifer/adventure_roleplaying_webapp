@@ -18,7 +18,7 @@ get '/monsters/dr' do
 end
 
 get '/monsters/type' do
-  @monsters = Monster.filter_by_type(params['type'].to_i)
+  @monsters = Monster.filter_by_type(params['type'])
   erb (:"monsters/type")
 end
 

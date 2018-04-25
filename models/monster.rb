@@ -93,7 +93,7 @@ class Monster
   end
 
   def self.filter_by_type(type)
-    sql = "SELECT * FROM monsters WHERE monsters.type = '$1';"
+    sql = "SELECT * FROM monsters WHERE monsters.type = $1;"
     values = [type]
     results = SqlRunner.run(sql, values)
     return results.map{|result| Monster.new(result)}
