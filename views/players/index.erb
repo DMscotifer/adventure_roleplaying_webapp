@@ -7,6 +7,12 @@
 <p>Stand strong against the forces of darkness!</p>
 </div>
 </br>
+<div class="button">
+  <form action="/players/new">
+      <input type="submit" value="Create New Character" />
+  </form>
+</div>
+</br>
 <table class=table>
   <tr>
     <th>Name</th>
@@ -18,5 +24,8 @@
     <td><%= player.class.capitalize %></td>
   </tr>
   <% end %>
+</table>
+  </div>
+
 </div>
 </body>

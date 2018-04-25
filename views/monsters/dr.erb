@@ -1,0 +1,24 @@
+<body>
+
+<h1 class="title_div">Codex Monstrum</h1>
+
+<div class="center_div">
+
+<table class=table>
+  <tr>
+    <th>Name</th>
+    <th>Species</th>
+    <th>Type</th>
+    <th>DR</th>
+  </tr>
+  <% for monster in @monsters %>
+  <tr>
+    <td><a href="/monsters/<%= monster.id %>"><%= monster.name.split.map(&:capitalize).join(' ')%></a></td>
+    <td><%= monster.species.split.map(&:capitalize).join(' ') %></td>
+    <td><%= monster.type.split.map(&:capitalize).join(' ')%></td>
+    <td><%= monster.dr %></td>
+  </tr>
+  <% end %>
+</div>
+
+</body>

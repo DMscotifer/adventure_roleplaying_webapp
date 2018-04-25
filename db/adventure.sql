@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS kills;
 DROP TABLE IF EXISTS items;
 DROP TABLE IF EXISTS players;
 DROP TABLE IF EXISTS monsters;
@@ -11,7 +12,8 @@ CREATE TABLE monsters
   type VARCHAR(255) not null,
   known BOOLEAN not null,
   image VARCHAR(255),
-  description VARCHAR(5000)
+  description VARCHAR(5000),
+  dr INT
 );
 
 CREATE TABLE players
@@ -32,4 +34,12 @@ CREATE TABLE items
   pc_owned BOOLEAN,
   image VARCHAR(255),
   description VARCHAR(500)
+);
+
+CREATE TABLE kills
+(
+  id SERIAL PRIMARY KEY,
+  monster_id INT REFERENCES monsters(id) ON DELETE CASCADE,
+  player_id INT REFERENCES players(id) ON DELETE CASCADE,
+  kill_total INT
 );

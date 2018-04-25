@@ -8,6 +8,8 @@
     <img src=<%= @monster.image %> alt="">
   </div>
 
+<h2>Difficulty Raiting: <%= @monster.dr %></h2>
+
 <p>Species: <%= @monster.species.split.map(&:capitalize).join(' ')%></p>
 
 <p>Type: <%= @monster.type.split.map(&:capitalize).join(' ') %></p>

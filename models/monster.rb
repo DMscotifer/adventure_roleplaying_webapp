@@ -2,7 +2,7 @@ require_relative('../db/sql_runner')
 
 class Monster
   attr_reader(:id)
-  attr_accessor(:name, :species, :type, :known, :image, :description)
+  attr_accessor(:name, :species, :type, :known, :image, :description, :dr)
 
   def initialize( options )
     @id = options['id'].to_i if options["id"]
@@ -12,11 +12,12 @@ class Monster
     @known = options['known']
     @image = options['image']
     @description = options['description']
+    @dr = options['dr']
   end
 
   def save()
-    sql =  "INSERT INTO monsters (name, species, type, known, image, description) VALUES ($1, $2, $3, $4, $5, $6) RETURNING id;"
-    values = [@name, @species, @type, @known, @image, @description]
+    sql =  "INSERT INTO monsters (name, species, type, known, image, description, dr) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING id;"
+    values = [@name, @species, @type, @known, @image, @description, @dr]
     result = SqlRunner.run(sql, values)
     @id = result[0]['id'].to_i
   end
@@ -30,13 +31,14 @@ class Monster
       type,
       known,
       image,
-      description
+      description,
+      dr
     ) =
     (
-      $1, $2, $3, $4, $5, $6
+      $1, $2, $3, $4, $5, $6, $7
     )
     WHERE id = $7"
-    values = [@name, @species, @type, @known, @image, @description]
+    values = [@name, @species, @type, @known, @image, @description, @dr]
     SqlRunner.run( sql, values )
   end
 
@@ -72,10 +74,17 @@ class Monster
   end
 
   def update()
-    sql = "UPDATE monsters SET (name, species, type, known, image, description) = ($1, $2, $3, $4, $5, $6) WHERE id = $6;"
-    values = [@name, @species, @type, @known, @image, @description, @id]
+    sql = "UPDATE monsters SET (name, species, type, known, image, description, dr) = ($1, $2, $3, $4, $5, $6, $7) WHERE id = $8;"
+    values = [@name, @species, @type, @known, @image, @description, @dr, @id]
     SqlRunner.run(sql, values)
   end
 
+
+  def self.filter_by_dr(dr)
+    sql = "SELECT * FROM monsters WHERE monsters.dr > $1;"
+    values = [dr]
+    results = SqlRunner.run(sql, values)
+    return results.map{|result| Monster.new(result)}
+  end
 
 end

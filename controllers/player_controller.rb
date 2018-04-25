@@ -15,3 +15,13 @@ get '/players/:id' do
   @player = Player.find(params['id'].to_i)
   erb(:"players/show")
 end
+
+get "/players/new" do
+  erb(:new)
+end
+
+post '/' do
+  new_player = Player.new(params)
+  new_player.save()
+  redirect to '/'
+end

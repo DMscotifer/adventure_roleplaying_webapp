@@ -9,6 +9,7 @@ body {
   padding: 0px;
   margin: 0px;
   font-size: 2em;
+  height: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -51,7 +52,7 @@ a:hover, a:active, a:focus {
   text-align: center;
   position: relative;
   min-height: 100%;
-  top: 1em;
+  top: 1.25em;
   text-shadow: 3px 2px red;
 }
 
@@ -59,13 +60,14 @@ a:hover, a:active, a:focus {
   border: 2px solid #993333;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 2em;
+  margin-top: 3em;
   width: 90%;
   background: #f1e9d2;
   text-align: left;
   padding: 8px;
-  padding-bottom: 7em;
+  padding-bottom: 20em;
   padding-left: 2em;
+  height: 100%
 }
 
 ul {
@@ -125,13 +127,15 @@ li a:hover {
 }
 
 .subject-image {
+  border-width: 10em;
+  border-color: black;
   overflow-wrap: break-word;
   display: flex;
   justify-content: flex-end;
   flex: right;
   margin: 1em 1em 0em 0em;
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 50%;
+  max-height: 50%;
   float: right;
   width: 540px;
   height: 742px;

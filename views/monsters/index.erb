@@ -7,18 +7,35 @@
 
 <p>Prepare yourself, for knowledge is power.</p>
 </div>
+
+<div class="button">
+  <form action="/monsters/new">
+      <input type="submit" value="Create New Monster" />
+  </form>
+</div>
+
+<form action="/monsters/dr/:dr" method="get">
+  <label for="dr">Search By Difficulty Rating: </label>
+  <input type="number" name="dr" value="">
+
+  <input type="submit" value="Search">
+</form>
+
+
 </br>
 <table class=table>
   <tr>
     <th>Name</th>
     <th>Species</th>
     <th>Type</th>
+    <th>DR</th>
   </tr>
   <% for monster in @monsters %>
   <tr>
     <td><a href="/monsters/<%= monster.id %>"><%= monster.name.split.map(&:capitalize).join(' ')%></a></td>
     <td><%= monster.species.split.map(&:capitalize).join(' ') %></td>
     <td><%= monster.type.split.map(&:capitalize).join(' ')%></td>
+    <td><%= monster.dr %></td>
   </tr>
   <% end %>
 </div>

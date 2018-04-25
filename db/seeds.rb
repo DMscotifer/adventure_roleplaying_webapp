@@ -2,6 +2,7 @@
 require_relative("../models/monster.rb")
 require_relative("../models/player.rb")
 require_relative("../models/item.rb")
+require_relative("../models/kills.rb")
 require("pry-byebug")
 
 Monster.delete_all()
@@ -15,7 +16,8 @@ monster1 = Monster.new(
     "type" => "placeholder",
     "known" => false,
     "image" => "placeholder",
-    "description" => "placeholder"
+    "description" => "placeholder",
+    "dr" => 0
   }
 )
 monster1.save()
@@ -27,7 +29,9 @@ monster2 = Monster.new(
     "type" => "aberration",
     "known" => true,
     "image" => "/images/monsters/dark_naga.jpg",
-    "description" => "Iä! Iä! Cthulhu fhtagn! Ph'nglui mglw'nfah Cthulhu R'lyeh wgah'nagl fhtagn!"
+    "description" => "Iä! Iä! Cthulhu fhtagn! Ph'nglui mglw'nfah Cthulhu R'lyeh wgah'nagl fhtagn!",
+    "dr" => 8
+
   }
 )
 monster2.save()
@@ -39,7 +43,8 @@ monster3 = Monster.new(
     "type" => "undead",
     "known" => false,
     "image" => "/images/monsters/mohrg.jpg",
-    "description" => "Iä! Iä! Cthulhu fhtagn! Ph'nglui mglw'nfah Cthulhu R'lyeh wgah'nagl fhtagn!"
+    "description" => "Iä! Iä! Cthulhu fhtagn! Ph'nglui mglw'nfah Cthulhu R'lyeh wgah'nagl fhtagn!",
+    "dr" => 8
   }
 )
 monster3.save()
@@ -51,7 +56,8 @@ monster4 = Monster.new(
     "type" => "outsider",
     "known" => true,
     "image" => "/images/monsters/nabasu.png",
-    "description" => "Iä! Iä! Cthulhu fhtagn! Ph'nglui mglw'nfah Cthulhu R'lyeh wgah'nagl fhtagn!"
+    "description" => "Iä! Iä! Cthulhu fhtagn! Ph'nglui mglw'nfah Cthulhu R'lyeh wgah'nagl fhtagn!",
+    "dr" => 8
   }
 )
 monster4.save()
@@ -63,7 +69,8 @@ monster5 = Monster.new(
     "type" => "aberration",
     "known" => false,
     "image" => "/images/monsters/cloakers.jpg",
-    "description" => "Iä! Iä! Cthulhu fhtagn! Ph'nglui mglw'nfah Cthulhu R'lyeh wgah'nagl fhtagn!"
+    "description" => "Iä! Iä! Cthulhu fhtagn! Ph'nglui mglw'nfah Cthulhu R'lyeh wgah'nagl fhtagn!",
+    "dr" => 8
   }
 )
 monster5.save()
@@ -75,7 +82,8 @@ monster6 = Monster.new(
     "type" => "undead",
     "known" => true,
     "image" => "/images/monsters/wraith.jpg",
-    "description" => "Iä! Iä! Cthulhu fhtagn! Ph'nglui mglw'nfah Cthulhu R'lyeh wgah'nagl fhtagn!"
+    "description" => "Iä! Iä! Cthulhu fhtagn! Ph'nglui mglw'nfah Cthulhu R'lyeh wgah'nagl fhtagn!",
+    "dr" => 8
   }
 )
 monster6.save()
@@ -87,7 +95,8 @@ monster7 = Monster.new(
     "type" => "monstrous humanoid",
     "known" => true,
     "image" => "/images/monsters/ettin.jpg",
-    "description" => "Iä! Iä! Cthulhu fhtagn! Ph'nglui mglw'nfah Cthulhu R'lyeh wgah'nagl fhtagn!"
+    "description" => "Iä! Iä! Cthulhu fhtagn! Ph'nglui mglw'nfah Cthulhu R'lyeh wgah'nagl fhtagn!",
+    "dr" => 8
   }
 )
 monster7.save()
@@ -99,7 +108,8 @@ monster8 = Monster.new(
     "type" => "outsider",
     "known" => false,
     "image" => "/images/monsters/bone_devil.jpeg",
-    "description" => "Iä! Iä! Cthulhu fhtagn! Ph'nglui mglw'nfah Cthulhu R'lyeh wgah'nagl fhtagn!"
+    "description" => "Iä! Iä! Cthulhu fhtagn! Ph'nglui mglw'nfah Cthulhu R'lyeh wgah'nagl fhtagn!",
+    "dr" => 9
   }
 )
 monster8.save()
@@ -111,7 +121,8 @@ monster9 = Monster.new(
     "type" => "outsider",
     "known" => false,
     "image" => "/images/monsters/night_hag.png",
-    "description" => "Iä! Iä! Cthulhu fhtagn! Ph'nglui mglw'nfah Cthulhu R'lyeh wgah'nagl fhtagn!"
+    "description" => "Iä! Iä! Cthulhu fhtagn! Ph'nglui mglw'nfah Cthulhu R'lyeh wgah'nagl fhtagn!",
+    "dr" => 9
   }
 )
 monster9.save()
@@ -123,7 +134,8 @@ monster10 = Monster.new(
     "type" => "aberration",
     "known" => true,
     "image" => "/images/monsters/spirit_naga.jpg",
-    "description" => "Iä! Iä! Cthulhu fhtagn! Ph'nglui mglw'nfah Cthulhu R'lyeh wgah'nagl fhtagn!"
+    "description" => "Iä! Iä! Cthulhu fhtagn! Ph'nglui mglw'nfah Cthulhu R'lyeh wgah'nagl fhtagn!",
+    "dr" => 9
   }
 )
 monster10.save()
@@ -135,7 +147,8 @@ monster11 = Monster.new(
     "type" => "undead",
     "known" => false,
     "image" => "/images/monsters/vampire.jpg",
-    "description" => "Iä! Iä! Cthulhu fhtagn! Ph'nglui mglw'nfah Cthulhu R'lyeh wgah'nagl fhtagn!"
+    "description" => "Iä! Iä! Cthulhu fhtagn! Ph'nglui mglw'nfah Cthulhu R'lyeh wgah'nagl fhtagn!",
+    "dr" => 9
   }
 )
 monster11.save()
@@ -146,8 +159,9 @@ monster12 = Monster.new(
     "species" => "demon",
     "type" => "outsider",
     "known" => true,
-    "image" => "/images/monsters/vrock.png",
-    "description" => "Iä! Iä! Cthulhu fhtagn! Ph'nglui mglw'nfah Cthulhu R'lyeh wgah'nagl fhtagn!"
+    "image" => "/images/monsters/vrock.jpg",
+    "description" => "Iä! Iä! Cthulhu fhtagn! Ph'nglui mglw'nfah Cthulhu R'lyeh wgah'nagl fhtagn!",
+    "dr" => 9
   }
 )
 monster12.save()
@@ -159,7 +173,8 @@ monster13 = Monster.new(
     "type" => "monstrous humanoid",
     "known" => false,
     "image" => "/images/monsters/minotaur.jpg",
-    "description" => "Iä! Iä! Cthulhu fhtagn! Ph'nglui mglw'nfah Cthulhu R'lyeh wgah'nagl fhtagn!"
+    "description" => "Iä! Iä! Cthulhu fhtagn! Ph'nglui mglw'nfah Cthulhu R'lyeh wgah'nagl fhtagn!",
+    "dr" => 9
   }
 )
 monster13.save()
@@ -171,7 +186,8 @@ monster14 = Monster.new(
     "type" => "monstrous humanoid",
     "known" => false,
     "image" => "/images/monsters/troll.jpg",
-    "description" => "Iä! Iä! Cthulhu fhtagn! Ph'nglui mglw'nfah Cthulhu R'lyeh wgah'nagl fhtagn!"
+    "description" => "Iä! Iä! Cthulhu fhtagn! Ph'nglui mglw'nfah Cthulhu R'lyeh wgah'nagl fhtagn!",
+    "dr" => 9
   }
 )
 monster14.save()
@@ -183,7 +199,8 @@ monster15 = Monster.new(
     "type" => "undead",
     "known" => true,
     "image" => "/images/monsters/greater_shadow.jpg",
-    "description" => "Iä! Iä! Cthulhu fhtagn! Ph'nglui mglw'nfah Cthulhu R'lyeh wgah'nagl fhtagn!"
+    "description" => "Iä! Iä! Cthulhu fhtagn! Ph'nglui mglw'nfah Cthulhu R'lyeh wgah'nagl fhtagn!",
+    "dr" => 10
    }
 )
 monster15.save()
@@ -195,7 +212,8 @@ monster16 = Monster.new(
     "type" => "outsider",
     "known" => true,
     "image" => "/images/monsters/bebilith.png",
-    "description" => "Iä! Iä! Cthulhu fhtagn! Ph'nglui mglw'nfah Cthulhu R'lyeh wgah'nagl fhtagn!"
+    "description" => "Iä! Iä! Cthulhu fhtagn! Ph'nglui mglw'nfah Cthulhu R'lyeh wgah'nagl fhtagn!",
+    "dr" => 10
   }
 )
 monster16.save()
@@ -206,8 +224,9 @@ monster17 = Monster.new(
     "species" => "devil",
     "type" => "outsider",
     "known" => false,
-    "image" => "/images/monsters/barbed_devil.png",
-    "description" => "Iä! Iä! Cthulhu fhtagn! Ph'nglui mglw'nfah Cthulhu R'lyeh wgah'nagl fhtagn!"
+    "image" => "/images/monsters/barbed_devil.jpg",
+    "description" => "Iä! Iä! Cthulhu fhtagn! Ph'nglui mglw'nfah Cthulhu R'lyeh wgah'nagl fhtagn!",
+    "dr" => 11
   }
 )
 monster17.save()
@@ -219,7 +238,8 @@ monster18 = Monster.new(
     "type" => "undead",
     "known" => false,
     "image" => "/images/monsters/devourer.png",
-    "description" => "Iä! Iä! Cthulhu fhtagn! Ph'nglui mglw'nfah Cthulhu R'lyeh wgah'nagl fhtagn!"
+    "description" => "Iä! Iä! Cthulhu fhtagn! Ph'nglui mglw'nfah Cthulhu R'lyeh wgah'nagl fhtagn!",
+    "dr" => 11
   }
 )
 monster18.save()
@@ -231,7 +251,8 @@ monster19 = Monster.new(
     "type" => "outsider",
     "known" => true,
     "image" => "/images/monsters/hezrou.jpg",
-    "description" => "Iä! Iä! Cthulhu fhtagn! Ph'nglui mglw'nfah Cthulhu R'lyeh wgah'nagl fhtagn!"
+    "description" => "Iä! Iä! Cthulhu fhtagn! Ph'nglui mglw'nfah Cthulhu R'lyeh wgah'nagl fhtagn!",
+    "dr" => 11
   }
 )
 monster19.save()
@@ -243,7 +264,8 @@ monster20 = Monster.new(
     "type" => "outsider",
     "known" => true,
     "image" => "/images/monsters/rakshasas.png",
-    "description" => "Iä! Iä! Cthulhu fhtagn! Ph'nglui mglw'nfah Cthulhu R'lyeh wgah'nagl fhtagn!"
+    "description" => "Iä! Iä! Cthulhu fhtagn! Ph'nglui mglw'nfah Cthulhu R'lyeh wgah'nagl fhtagn!",
+    "dr" => 12
   }
 )
 monster20.save()
@@ -255,7 +277,8 @@ monster21 = Monster.new(
     "type" => "undead",
     "known" => false,
     "image" => "/images/monsters/lich.jpeg",
-    "description" => "Iä! Iä! Cthulhu fhtagn! Ph'nglui mglw'nfah Cthulhu R'lyeh wgah'nagl fhtagn!"
+    "description" => "Iä! Iä! Cthulhu fhtagn! Ph'nglui mglw'nfah Cthulhu R'lyeh wgah'nagl fhtagn!",
+    "dr" => 12
   }
 )
 monster21.save()
@@ -267,7 +290,8 @@ monster22 = Monster.new(
     "type" => "outsider",
     "known" => true,
     "image" => "/images/monsters/glabrezu.jpg",
-    "description" => "Iä! Iä! Cthulhu fhtagn! Ph'nglui mglw'nfah Cthulhu R'lyeh wgah'nagl fhtagn! "
+    "description" => "Iä! Iä! Cthulhu fhtagn! Ph'nglui mglw'nfah Cthulhu R'lyeh wgah'nagl fhtagn! ",
+    "dr" => 13
   }
 )
 monster22.save()
@@ -279,7 +303,8 @@ monster23 = Monster.new(
     "type" => "outsider",
     "known" => true,
     "image" => "/images/monsters/ice_devil.jpg",
-    "description" => "Iä! Iä! Cthulhu fhtagn! Ph'nglui mglw'nfah Cthulhu R'lyeh wgah'nagl fhtagn!"
+    "description" => "Iä! Iä! Cthulhu fhtagn! Ph'nglui mglw'nfah Cthulhu R'lyeh wgah'nagl fhtagn!",
+    "dr" => 13
   }
 )
 monster23.save()
@@ -291,7 +316,8 @@ monster24 = Monster.new(
     "type" => "outsider",
     "known" => false,
     "image" => "/images/monsters/nalfeshnee.jpg",
-    "description" => "Iä! Iä! Cthulhu fhtagn! Ph'nglui mglw'nfah Cthulhu R'lyeh wgah'nagl fhtagn!"
+    "description" => "Iä! Iä! Cthulhu fhtagn! Ph'nglui mglw'nfah Cthulhu R'lyeh wgah'nagl fhtagn!",
+    "dr" => 14
   }
 )
 monster24.save()
@@ -441,3 +467,12 @@ item7 = Item.new(
   }
 )
 item7.save()
+
+kill1 = Kill.new(
+  {
+    "monster_id" => 24,
+    "player_id" => 4,
+    "kill_total" => 1
+  }
+)
+kill1.save()
