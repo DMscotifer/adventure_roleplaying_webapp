@@ -53,12 +53,12 @@ class Monster
    SqlRunner.run(sql, values)
  end
 
-  def self.find(id)
-    sql = "SELECT * FROM monsters WHERE id = $1;"
-    values = [id]
-    result = SqlRunner.run(sql, values)[0]
-    return Monster.new(result)
-  end
+ def self.find(id)
+   sql = "SELECT * FROM monsters WHERE id = $1;"
+   values = [id]
+   result = SqlRunner.run(sql, values)[0]
+   return Monster.new(result)
+ end
 
 
   def self.show_all()
@@ -81,7 +81,7 @@ class Monster
 
 
   def self.filter_by_dr(dr)
-    sql = "SELECT * FROM monsters WHERE monsters.dr > $1;"
+    sql = "SELECT * FROM monsters WHERE monsters.dr >= $1;"
     values = [dr]
     results = SqlRunner.run(sql, values)
     return results.map{|result| Monster.new(result)}

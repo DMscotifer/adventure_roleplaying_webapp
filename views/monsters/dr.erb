@@ -13,7 +13,7 @@
   </tr>
   <% for monster in @monsters %>
   <tr>
-    <td><a href="/monsters/<%= monster.id %>"><%= monster.name.split.map(&:capitalize).join(' ')%></a></td>
+    <td><a href="/monsters/dr/<%= monster.id %>"><%= monster.name.split.map(&:capitalize).join(' ')%></a></td>
     <td><%= monster.species.split.map(&:capitalize).join(' ') %></td>
     <td><%= monster.type.split.map(&:capitalize).join(' ')%></td>
     <td><%= monster.dr %></td>
