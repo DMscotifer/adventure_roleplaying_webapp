@@ -1,5 +1,6 @@
 require_relative('../db/sql_runner')
 
+
 class Player
   attr_reader(:id)
   attr_accessor(:name, :class, :image, :description )
@@ -54,6 +55,5 @@ class Player
     result = SqlRunner.run(sql, values)[0]
     return Player.new(result)
   end
-
 
 end

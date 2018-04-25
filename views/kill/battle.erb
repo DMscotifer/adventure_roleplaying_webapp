@@ -1,0 +1,22 @@
+<div class=title_div>
+  <h1>FIGHT!!!</h1>
+</div>
+
+<div class=center_div>
+<div class=vs_container>
+  <div class="hero_fight">
+    <img src=<%= @hero.image %> alt="">
+    <h2><%= @hero.name %></h2>
+  </div>
+
+<div class="vs_div">
+  <img src="/images/vs.png" alt="">
+</div>
+
+  <div class="enemy_fight">
+    <img src=<%= @enemy.image %> alt="">
+    <h2><%= @enemy.name.split.map(&:capitalize).join(' ') %></h2>
+  </div>
+</div>
+
+</div>

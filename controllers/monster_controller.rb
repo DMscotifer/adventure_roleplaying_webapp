@@ -17,8 +17,19 @@ get '/monsters/dr' do
   erb (:"monsters/dr")
 end
 
+get '/monsters/type' do
+  @monsters = Monster.filter_by_type(params['type'].to_i)
+  erb (:"monsters/type")
+end
+
 
 get '/monsters/:id' do
   @monster = Monster.find(params['id'].to_i)
   erb(:"monsters/show")
+end
+
+post '/' do
+  new_monster = Monster.new(params)
+  new_monster.save()
+  redirect to '/'
 end

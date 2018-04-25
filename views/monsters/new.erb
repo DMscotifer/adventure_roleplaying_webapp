@@ -1,13 +1,17 @@
-<div class="center_div">
+<div class="title_div">
+<h1>Create New Monster</h1>
+</div>
+
+<div class="form">
   <form action="/" method="post">
 
   <label for="name">Name: </label>
   <input type="text" name="name" value="">
 
-  <label for="class">Species: </label>
+  <label for="species">Species: </label>
   <input type="text" name="species" value="">
 
-  <label for="class">Type: </label>
+  <label for="type">Type: </label>
   <input type="text" name="type" value="">
 
   <label for="image">Image: </label>
@@ -16,6 +20,14 @@
   <label for="description">Description: </label>
   <input type="text" name="description" value="">
 
+  <label for="dr">Difficulty Rating: </label>
+  <input type="number" name="dr" value="">
+
+  <input type="radio" name="known" value="true" checked> Known<br>
+  <input type="radio" name="known" value="false"> Unknown
+
+<div class="button">
   <input type="submit" value="Create Monster">
+</div>
 </form>
 </div>

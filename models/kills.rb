@@ -38,4 +38,5 @@ class Kill
     SqlRunner.run(sql)
   end
 
+
 end
